@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+  <title>Let's React!</title>
+</head>
+<body>
+  <div id="app">React has not rendered yet</div>
+
+  <script type="text/babel">
+    function FriendLy () {
+      var style = {
+        height:300,
+        width:200,
+        backgroundColor:'white',
+        WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+        filter: "drop-shadow(0px 0px 5px #555)"
+      }  
+      return (
+        <div style={style}>
+           <Avatar/>
+           <UserName/>
+           <Connections/>
+        </div>
+      )
+    }
+    function Avatar(){
+      var style={
+        margin:20,
+        height:150,
+        width:150,
+        borderRadius:"50%"
+      }
+      return(
+        <img style={style} src="https://pbs.twimg.com/profile_images/699422966556168193/zUm4vhAo_400x400.jpg" />
+      )
+    }
+    function UserName(){
+      var style = {
+        margin:20,
+        fontSize:24,
+        fontFamily:"Arial, Helvetica, san-serifs"
+      };
+      return(
+        <h1 style={style}>Profile Name</h1>
+      )
+    }
+    function Connections(){
+      return(
+        <div>
+          <Like/><Share/><Add/>
+        </div>
+      )
+    }
+
+    var iconStyle ={
+      margin:20
+    }
+    function Like(){
+      return(
+        <i style={iconStyle} className="far fa-thumbs-up"></i>
+      )
+    }
+
+    function Share(){
+      return(
+        <i style={iconStyle} className="fas fa-share"></i>
+      )
+    }
+
+    function Add(){
+      return(
+        <i style={iconStyle} className="fas fa-users"></i>
+      )
+    }
+
+    ReactDOM.render(
+      <FriendLy/>,
+      document.getElementById('app')
+    )
+  </script>
+</body>
+</html>
